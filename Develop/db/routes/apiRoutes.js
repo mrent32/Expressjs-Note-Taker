@@ -1,16 +1,14 @@
-const router = require('express').Router
+const router = require('express').Router()
+const path = require('path')
 const fs = require('fs')
+const db = require('../db.json')
 
-router.get('./notes', (req, res)=> {
-    res.sendFile(path.join(__dirname, './public/notes.html')); 
-    res.json()
-})
-router.get('./index', (req, res)=> {
-    res.sendFile(path.join(__dirname, '../public/index.html')); 
-    res.json()
+router.get('/notes', (req, res)=> {
+    res.sendFile(path.join(__dirname, db))
 })
 
-router.post('/api/notes', (req, res)=> {
+
+router.post('/notes', (req, res)=> {
    const db = res.json(fs.readFile('db/db.json', 'utf-8'))
     const newNote = {
         title: req.body.title,
