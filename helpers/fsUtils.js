@@ -1,6 +1,6 @@
 const fs = require('fs');
 const util = require('util');
-const notes = require('../db/routes/apiRoutes');
+const notes = require('../routes/apiRoutes');
 
 const readFromFile = util.promisify(fs.readFile);
 
