@@ -11,7 +11,7 @@ app.use(express.static('public'))
 app.use(require('./routes'))
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => { 
     console.log('http://localhost:3001')
 })
 
